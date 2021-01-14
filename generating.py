@@ -6,21 +6,26 @@
 
 import random
 
-generating = random.randint(1, 100)
-
 
 def main():
-    
     random_list = []
+    number_of_elements = 10
 
-    for loop_counter in range(1,10+1):
-        randoms = generating
-        random_list.append(randoms)
+    for loop_counter in range(0, number_of_elements):
+        generating = random.randint(1, 100)
+        random_list.append(generating)
+        print(generating)
+
     print("")
-    
-    for loop_counter in range(1,10+1):
-        average = random_list[loop_counter]
-        
+
+    total = 0
+    for loop_counter in range(0, number_of_elements):
+        total = total + random_list[loop_counter]
+
+    average = total / number_of_elements
+    print("The total is: {0}.".format(total))
+    print("The average is {0}.".format(average))
+
 
 if __name__ == "__main__":
     main()
